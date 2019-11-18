@@ -35,4 +35,5 @@ $ python3 main.py
 
 - [Forma do Polinómio de Bernstein](img/polinomio.svg)
 - [Wikipédia - Polinomios de Bernstein](https://pt.wikipedia.org/wiki/Polin%C3%B3mios_de_Bernstein)
+- [Interpolação: Polinômios de Bernstein](http://www.portalsaberlivre.com.br/manager/uploads/educacional/1316553740.pdf)
 - [bezdraw.py](https://gist.github.com/Alquimista/1274149/ca37e497b3f2a16c9d3ec4889ed63c80986e9dba)
