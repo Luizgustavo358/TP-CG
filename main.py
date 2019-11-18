@@ -7,9 +7,9 @@
 
 # imports
 import sys, os, math
-from PyQt5.QtGui import (QIcon, QPainter, QPen)
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QMainWindow, QAction, qApp, QApplication, QDesktopWidget, QToolButton, QPushButton, QInputDialog, QLineEdit)
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 from implementacoes import bezier
 
 
@@ -33,9 +33,26 @@ class ComputacaoGrafica(QMainWindow):
 
     def Bezier(self):
         self.comando = 'bezier'
-        valorA, ok = QInputDialog.getText(self, 'Input Dialog', 'Digite a quantidade de pontos de controle')
+        valorA, ok = QInputDialog.getText(self, 'Curva de Bézier', 'Digite a quantidade de pontos de controle:')
         self.BezierPtsControle = int(valorA)
     # fim Bezier()
+
+    def mudar_valores(self):
+        self.formGroupBox = QGroupBox('Alterar Valores')
+
+        layout = QFormLayout()
+
+        # Dialog de mudar valores
+        x1 = QLabel("x1")
+        x1_edit = QLineEdit()
+        y1 = QLabel("y1")
+        y1_edit = QLineEdit()
+
+        layout.addRow(x1, x1_edit)
+        layout.addRow(y1, y1_edit)
+        self.formGroupBox.setLayout(layout)
+    # fim mudar_valores()
+
 
     def initUI(self):
         self.setGeometry(300, 300, 1024, 738)
@@ -50,6 +67,9 @@ class ComputacaoGrafica(QMainWindow):
         BezierAction = BezierMenu.addAction('Curva Bezier')
         BezierAction.triggered.connect(self.Bezier)
 
+        MudarValores = BezierMenu.addAction('Mudar Valores')
+        MudarValores.triggered.connect(self.mudar_valores)
+
         # Menu Limpar Tela
         clearMenu = menubar.addMenu('&Clear')
 
@@ -59,10 +79,9 @@ class ComputacaoGrafica(QMainWindow):
     # fim initUI()
 
     '''
-        Clicou em algum ponto do grafico
+        Metodo mousePressEvent() - Clicou em algum ponto do canvas.
     '''
-    def mousePressEvent(self, event): 
-        # BEZIER
+    def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
             if self.comando == 'bezier':                
                 x = event.pos().x()
@@ -75,9 +94,12 @@ class ComputacaoGrafica(QMainWindow):
         # fim if
     # fim mousePressEvent()
 
+    '''
+        Metodo paintEvent() - desenha no canvas. 
+    '''
     def paintEvent(self, e):
         cor = Qt.black    
-        pen = QPen(cor, 3, Qt.SolidLine)                    
+        pen = QPen(cor, 2, Qt.SolidLine)
         painter = QPainter(self)
 
         if self.comando == 'bezier':
@@ -86,7 +108,7 @@ class ComputacaoGrafica(QMainWindow):
             # fim for
 
             if self.BezierVarControle < self.BezierPtsControle:
-                pen = QPen(Qt.darkBlue, 8, Qt.SolidLine)
+                pen = QPen(Qt.darkBlue, 3, Qt.SolidLine)
                 painter.setPen(pen) 
                 aux = bezier(1200, self.BezCur)
 
@@ -94,7 +116,7 @@ class ComputacaoGrafica(QMainWindow):
                     painter.drawPoint(pontos['x'], pontos['y'])
                 # fim for
             else:
-                pen = QPen(cor, 3, Qt.SolidLine)
+                pen = QPen(cor, 2, Qt.SolidLine)
                 painter.setPen(pen) 
                 aux = bezier(1200, self.BezCur)
                 for pontos in aux:
@@ -105,6 +127,7 @@ class ComputacaoGrafica(QMainWindow):
             self.update()
         # fim if
     # fim paintEvent()
+# fim class
 
 
 if __name__ == '__main__':
