@@ -21,7 +21,7 @@ def binomial(i, n):
 
 '''
     Metodo bernstein() - Algoritmo padrão do polinomio de Bernstein.
-    Polinômio de Bernstein = Combinação n,i * (t ^ (n-1)) * (1-t)^i
+    Polinômio de Bernstein = Combinação(n, i) * (t ^ (n-1)) * (1-t)^i
     t = Valor paramétrico da curva
     i = ponto atual da curva
     n = quantidade total de pontos
