@@ -13,25 +13,25 @@ ou mesmo para acionamento das funcionalidades da interface.
 
 ### > Para Rodar o programa:
 
-- Rode o [Arquivo](main.py) executável em:
+- Rode o [Arquivo](main.py) em:
 
-```
-executavel/TrabalhoPraticoBezier.exe
+```sh
+$ python3 main.py
 ```
 
 ### > Link do Vídeo:
 
-- [Vídeo do Youtube](https://youtu.be/nHZAO5eR8Us)
+- [Vídeo do Youtube]()
 
 
 ### > O que usei:
 
-- [Visual Studio Code]() - 
+- [PyQT5](https://www.riverbankcomputing.com/static/Docs/PyQt5/index.html) - Biblioteca gráfica utilizada.
+- [Visual Studio Code](https://code.visualstudio.com/) - IDE Utilizada para fazer o código.
 - [StackEdit](https://stackedit.io/) - Para Editar o README.md.
 - [Markdown Editor](https://jbt.github.io/markdown-editor/) - Para Editar o README.md.
 
 ### > Referências:
 
-
-- [Curvas e Superfícies de Bézier](http://conteudo.icmc.usp.br/pessoas/apneto/cursos/2016/sme0271/bezier.pdf)
-- [Khan Academy](https://www.khanacademy.org/partner-content/pixar/animate/parametric-curves/a/equations-from-de-casteljaus-algorithm)
+- [Polinomio de Bernstain](https://pt.wikipedia.org/wiki/Polin%C3%B3mios_de_Bernstein)
+- [bezdraw.py](https://gist.github.com/Alquimista/1274149/ca37e497b3f2a16c9d3ec4889ed63c80986e9dba)
