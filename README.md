@@ -21,7 +21,7 @@ $ python3 main.py
 
 ### > Link do Vídeo:
 
-- [Vídeo do Youtube]()
+- [Vídeo do Youtube](https://youtu.be/bSDPDR2y6PY)
 
 
 ### > O que usei:
