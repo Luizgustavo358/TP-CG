@@ -84,7 +84,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Alterar"))
         self.groupBox.setTitle(_translate("Dialog", "Alterar Coordenadas:"))
         self.label_4.setText(_translate("Dialog", "y2"))
         self.label_6.setText(_translate("Dialog", "y3"))

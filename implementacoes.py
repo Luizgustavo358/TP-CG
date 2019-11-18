@@ -34,8 +34,8 @@ def bernstein(t, i, n):
 
 '''
     Metodo bezier_calcula_pontos() - Calcula a coordenada do ponto.
-    t = Valor paramétrico da curva, entre 0 e 1 o valor
-    Points = Pontos de controle da curva a ser criada
+    t = Valor paramétrico da curva, entre 0 e 1
+    points = Pontos de controle da curva a ser criada
 '''
 def bezier_calcula_pontos(t, points):
     # Calculate coordinate of a point in the bezier curve
@@ -54,8 +54,8 @@ def bezier_calcula_pontos(t, points):
 
 '''
     Metodo bezier() - faz a curva de Bezier.
-    n  = número de pontos a serem criados
-    Points  = pontos de controle
+    n = número de pontos a serem criados
+    points = pontos de controle
 '''
 def bezier(n, points):
     # Range of points in a curve bezier
@@ -64,7 +64,7 @@ def bezier(n, points):
     for i in range(n):
         t = i / float(n - 1)
         x, y = bezier_calcula_pontos(t, points)
-        bezier.append({'x': x, 'y': y})
+        bezier.append({ 'x': x, 'y': y })
     # fim for
 
     return bezier
